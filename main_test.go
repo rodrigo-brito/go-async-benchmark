@@ -26,3 +26,17 @@ func BenchmarkRunnerB(b *testing.B) {
 		Run(numberTasks, maxAsync, duration, runner)
 	}
 }
+
+func BenchmarkRunnerC(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		runner := new(RunnerC)
+		Run(numberTasks, maxAsync, duration, runner)
+	}
+}
+
+func BenchmarkRunnerD(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		runner := new(RunnerD)
+		Run(numberTasks, maxAsync, duration, runner)
+	}
+}
