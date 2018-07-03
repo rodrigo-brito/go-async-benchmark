@@ -18,5 +18,6 @@ func (r * RunnerD) Run(limit int, tasks ...Task) {
 			wg.Done()
 		}()
 	}
+
 	wg.Wait()
 }

@@ -7,7 +7,7 @@ import (
 
 const (
 	numberTasks = 1000
-	maxAsync = 10
+	maxAsync = 50
 	duration = 10 * time.Millisecond
 )
 
@@ -37,6 +37,13 @@ func BenchmarkRunnerC(b *testing.B) {
 func BenchmarkRunnerD(b *testing.B) {
 	for n := 0; n < b.N; n++ {
 		runner := new(RunnerD)
+		Run(numberTasks, maxAsync, duration, runner)
+	}
+}
+
+func BenchmarkRunnerE(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		runner := new(RunnerE)
 		Run(numberTasks, maxAsync, duration, runner)
 	}
 }
